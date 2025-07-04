@@ -7,7 +7,7 @@ public class Display{
         System.out.println("> Position :" + e.getPosition());
         System.out.println("> Department :" + e.getDepartment());
         System.out.println("> Salary :" + e.getSalary());
-        System.out.println("> Salary :" + e.getAnnualsalary());
+        System.out.println("> Annual Salary :" + e.getAnnualsalary());
         System.out.println();
     }
 }
