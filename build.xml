@@ -1,29 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="EmployeeManagement" default="run" basedir=".">
 
-    <!-- Set global properties -->
-    <property name="src.dir" value="."/>
-    <property name="build.dir" value="build"/>
-    <property name="main.class" value="Main"/>
-
     <!-- Clean previous build -->
     <target name="clean">
-        <delete dir="${build.dir}"/>
+        <delete dir="build"/>
     </target>
 
-    <!-- Compile Java files -->
+    <!-- Compile source files -->
     <target name="compile" depends="clean">
-        <mkdir dir="${build.dir}"/>
-        <javac srcdir="${src.dir}" destdir="${build.dir}" includeantruntime="false"/>
+        <mkdir dir="build"/>
+        <javac srcdir="src" destdir="build"/>
     </target>
 
-    <!-- Run the compiled Java program -->
+    <!-- Run the program with simulated input -->
     <target name="run" depends="compile">
-        <java classname="${main.class}" fork="true" failonerror="true">
-            <classpath>
-                <pathelement path="${build.dir}"/>
-            </classpath>
-        </java>
+        <java classname="Main" fork="true" classpath="build"
+              inputstring="1\nJohn\nManager\n30000\n2\n4\n" />
     </target>
 
 </project>
